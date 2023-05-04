@@ -3,7 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using WebApplicationtemplate.Areas.Identity.Data;
 using Newtonsoft.Json;
-
+using WebApplicationtemplate.Controllers;
+using WebApplicationtemplate.Context;
+using WebApplicationtemplate.Services;
 
 namespace WebApplicationtemplate
 {
@@ -13,12 +15,12 @@ namespace WebApplicationtemplate
         {
             var builder = WebApplication.CreateBuilder(args);
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'WebApplicationtemplateContextConnection' not found.");
-
+            builder.Services.AddScoped<IUserDataService, UserDataService>();
             builder.Services.AddDbContext<Data.WebApplicationtemplateContext>(options => options.UseSqlServer(connectionString));
-
+            builder.Services.AddDbContext<UserProductContext>();
             builder.Services.AddDefaultIdentity<WebApplicationtemplateUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<Data.WebApplicationtemplateContext>();
 
-            // Add services to the container.
+            // Add services to the container.connectionString
             builder.Services.AddControllersWithViews();
             //builder.Services.AddIdentity
             builder.Services.AddRazorPages();

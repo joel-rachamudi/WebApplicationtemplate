@@ -1,0 +1,83 @@
+@model IEnumerable<Product>
+
+   
+
+    <h1>Products</h1>
+    
+    <div> <a href="#" class="btn btn-primary">ADD</a></div>
+        
+      <div class="row">
+          
+           @foreach(var p in Model)
+        {
+           <div class="col-md-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            @p.ProductName
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">@p.ProductName</h5>
+                            <img src=@p.PictureURL class="img-thumbnail">
+                            <p class="card-text">
+                                <ol class="property">
+                                    <li>
+                                        Alternatenames:@p.Alternatenames
+                                    </li> 
+                                    <li>
+                                        Brand:@p.Brand
+                                    </li>
+                                    Model:@p.Model
+                                    <li>
+                                        Launched:@p.Launched
+                                    </li>
+                                    ConsoleFamily:@p.ConsoleFamily
+                                    <li>
+                                        ConsoleType:@p.ConsoleType
+                                    </li>
+                                    Inputmethod:@p.Inputmethod
+                                    <li>
+                                        HardDisk:@p.HardDisk 
+                                    </li>
+                                    RAM:@p.RAM
+                                    <li>
+                                    Processor:@p.Processor
+    
+                                    </li>
+                                    <li>
+                                    Graphics:@p.Graphics
+                                    </li>
+                                    <li>
+                                    Ethernet:@p.Ethernet
+                                    </li>
+                                    <li>
+                                    Weight:@p. Weight
+                                    </li>
+                                    <li>
+                                    HDMI:@p.HDMI
+                                    </li>
+                                    <li>
+                                    USB:@p. USB
+                                </li>
+                                <li>
+                                    AVDigitalOutput:@p.AVDigitalOutput
+                                </li>
+                                <li>
+                                    WiFi:@p.WiFi
+                                </li>
+                                    
+                                </ol>
+                            </p>
+    
+                        
+                        <a href="#" class="btn btn-primary">update</a>
+                        <a href="#" class="btn btn-primary">delete</a>
+                        </div>
+        }
+        </div>
+      </div>  
+          
+        
+    
+    
+    
+     

@@ -26,14 +26,7 @@ namespace WebApplicationtemplate.Controllers
         {
             return View();
         }
-        public IActionResult Products()
-           
-        {
-            string filePath = "C:\\databeat_JOEL\\THE_GOOD_GUY project\\learn\\intern-task2\\WebApplicationtemplate\\jsontext.txt";
-
-            List<Product> myDeserializedClass = JsonConvert.DeserializeObject<List<Product>>(filePath);
-            return View();
-        }
+        
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

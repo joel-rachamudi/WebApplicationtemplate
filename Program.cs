@@ -2,17 +2,22 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using WebApplicationtemplate.Areas.Identity.Data;
-using Newtonsoft.Json;
+//using Newtonsoft.Json;
+using System.Text.Json;
+
 using WebApplicationtemplate.Controllers;
 using WebApplicationtemplate.Context;
 using WebApplicationtemplate.Services;
+using WebApplicationtemplate.Models;
 
 namespace WebApplicationtemplate
 {
     public class Program
     {
         public static void Main(string[] args)
-        {
+        {    /*string? json = File.ReadAllText("C:\\Users\\Joel Victor\\Desktop\\gameconoleedited.json");
+             var products = JsonSerializer.Deserialize<Rootobject>(json);
+            Console.WriteLine(products);*/
             var builder = WebApplication.CreateBuilder(args);
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'WebApplicationtemplateContextConnection' not found.");
             builder.Services.AddTransient<IUserDataService, UserDataService>();
@@ -53,6 +58,10 @@ namespace WebApplicationtemplate
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
+       
+
+            
+
 
 
         }

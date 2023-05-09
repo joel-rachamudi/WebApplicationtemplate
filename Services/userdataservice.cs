@@ -6,7 +6,7 @@ namespace WebApplicationtemplate.Services
     public class UserDataService: IUserDataService
     { 
 
-        public void Getdata(UserProduct model)
+        public void Postdata(UserProduct model)
         {
             using (var context = new UserProductContext())
             {

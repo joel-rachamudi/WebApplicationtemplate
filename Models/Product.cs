@@ -2,9 +2,8 @@
 namespace WebApplicationtemplate.Models
 
 {
-    public class Product
+    class Product
     {
-        // Root myDeserializedClass = JsonConvert.DeserializeObject<List<Root>>(myJsonResponse);
        
             [JsonProperty("Alternate names")]
             public string Alternatenames { get; set; }
@@ -64,18 +63,9 @@ namespace WebApplicationtemplate.Models
 
             [JsonProperty("Price in India")]
             public string PriceinIndia { get; set; }
-
-            [JsonProperty("Memory Card")]
-            public string MemoryCard { get; set; }
-
-            [JsonProperty("Battery Type")]
-            public string BatteryType { get; set; }
-
-            [JsonProperty("Screen Size")]
-            public string ScreenSize { get; set; }
-        }
+        
+    }
 
 
 
-    
 }

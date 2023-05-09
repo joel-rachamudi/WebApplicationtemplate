@@ -3,6 +3,6 @@
 namespace WebApplicationtemplate.Services
 {
     public interface IUserDataService{
-        void Getdata(UserProduct product);
+        void Postdata(UserProduct product);
     }
 }

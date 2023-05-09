@@ -11,10 +11,7 @@ namespace WebApplicationtemplate.Controllers
     {
         
 
-        public IActionResult Create()
-        {
-            return View();
-        }
+        
 
         private readonly IUserDataService _userDataService;
 

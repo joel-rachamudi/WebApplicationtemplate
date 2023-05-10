@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
+using Microsoft.AspNetCore.Authorization;
+//using Microsoft.EntityFrameworkCore;
+//using Newtonsoft.Json;
 using WebApplicationtemplate.Context;
 using WebApplicationtemplate.Models;
 using WebApplicationtemplate.Services;
+//using Microsoft.AspNetCore.Http;
 
 namespace WebApplicationtemplate.Controllers
 {
@@ -23,15 +25,17 @@ namespace WebApplicationtemplate.Controllers
 
         }
 
-        
+        [Authorize]
         public IActionResult UserProductView(UserProduct product)
 
                {
+            //ViewBag.statuscode=HttpContext.HttpResponse.StatusDescription;
             _userDataService.Postdata(product);
             return View();
             
             //Console.WriteLine("<<<<<<<<<<<<<<<<<<<<<<<<<Database updated>>>>>>>>>>>>>>>>>>>>>>>>>");
         }
+        [Authorize]
         public IActionResult ProductsView(UserProduct product)
 
         {

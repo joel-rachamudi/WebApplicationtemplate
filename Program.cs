@@ -20,7 +20,7 @@ namespace WebApplicationtemplate
             Console.WriteLine(products);*/
             var builder = WebApplication.CreateBuilder(args);
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'WebApplicationtemplateContextConnection' not found.");
-            builder.Services.AddTransient<IUserDataService, UserDataService>();
+            builder.Services.AddScoped<IUserDataService, UserDataService>();
             builder.Services.AddDbContext<Data.WebApplicationtemplateContext>(options => options.UseSqlServer(connectionString));
             builder.Services.AddDbContext<UserProductContext>();
             builder.Services.AddDefaultIdentity<WebApplicationtemplateUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<Data.WebApplicationtemplateContext>();

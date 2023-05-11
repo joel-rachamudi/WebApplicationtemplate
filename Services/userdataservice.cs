@@ -1,7 +1,7 @@
-﻿using WebApplicationtemplate.Models;
-using WebApplicationtemplate.Context;
+﻿using Eshop.Models;
+using Eshop.Context;
 
-namespace WebApplicationtemplate.Services
+namespace Eshop.Services
 {
     public class UserDataService: IUserDataService
     { 

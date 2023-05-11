@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WebApplicationtemplate.Context;
+using Eshop.Context;
 
 #nullable disable
 
-namespace WebApplicationtemplate.Migrations.UserProduct
+namespace Eshop.Migrations.UserProduct
 {
     [DbContext(typeof(UserProductContext))]
     [Migration("20230504102510_productmigrations")]
@@ -24,7 +24,7 @@ namespace WebApplicationtemplate.Migrations.UserProduct
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("WebApplicationtemplate.Models.UserProduct", b =>
+            modelBuilder.Entity("Eshop.Models.UserProduct", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

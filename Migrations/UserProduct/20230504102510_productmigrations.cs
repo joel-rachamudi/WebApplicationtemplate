@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace WebApplicationtemplate.Migrations.UserProduct
+namespace Eshop.Migrations.UserProduct
 {
     /// <inheritdoc />
     public partial class productmigrations : Migration

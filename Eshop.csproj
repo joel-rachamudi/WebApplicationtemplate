@@ -4,6 +4,8 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>Eshop</AssemblyName>
+    <RootNamespace>Eshop</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

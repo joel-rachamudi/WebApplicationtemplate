@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
-namespace WebApplicationtemplate.Areas.Identity.Data
+namespace Eshop.Areas.Identity.Data
 {
     public class WebApplicationtemplateUser : IdentityUser
     {

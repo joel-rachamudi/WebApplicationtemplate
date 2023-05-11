@@ -2,12 +2,12 @@
 using Microsoft.AspNetCore.Authorization;
 //using Microsoft.EntityFrameworkCore;
 //using Newtonsoft.Json;
-using WebApplicationtemplate.Context;
-using WebApplicationtemplate.Models;
-using WebApplicationtemplate.Services;
+using Eshop.Context;
+using Eshop.Models;
+using Eshop.Services;
 //using Microsoft.AspNetCore.Http;
 
-namespace WebApplicationtemplate.Controllers
+namespace Eshop.Controllers
 {
     public class ProductController : Controller
     {

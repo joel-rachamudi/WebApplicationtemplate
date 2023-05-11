@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WebApplicationtemplate.Data;
+using Eshop.Data;
 
 #nullable disable
 
-namespace WebApplicationtemplate.Migrations
+namespace Eshop.Migrations
 {
     [DbContext(typeof(WebApplicationtemplateContext))]
     [Migration("20230427121420_InitialCreate")]
@@ -162,7 +162,7 @@ namespace WebApplicationtemplate.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("WebApplicationtemplate.Areas.Identity.Data.WebApplicationtemplateUser", b =>
+            modelBuilder.Entity("Eshop.Areas.Identity.Data.WebApplicationtemplateUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -244,7 +244,7 @@ namespace WebApplicationtemplate.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("WebApplicationtemplate.Areas.Identity.Data.WebApplicationtemplateUser", null)
+                    b.HasOne("Eshop.Areas.Identity.Data.WebApplicationtemplateUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -253,7 +253,7 @@ namespace WebApplicationtemplate.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("WebApplicationtemplate.Areas.Identity.Data.WebApplicationtemplateUser", null)
+                    b.HasOne("Eshop.Areas.Identity.Data.WebApplicationtemplateUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -268,7 +268,7 @@ namespace WebApplicationtemplate.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WebApplicationtemplate.Areas.Identity.Data.WebApplicationtemplateUser", null)
+                    b.HasOne("Eshop.Areas.Identity.Data.WebApplicationtemplateUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -277,7 +277,7 @@ namespace WebApplicationtemplate.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("WebApplicationtemplate.Areas.Identity.Data.WebApplicationtemplateUser", null)
+                    b.HasOne("Eshop.Areas.Identity.Data.WebApplicationtemplateUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

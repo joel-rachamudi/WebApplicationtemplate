@@ -1,16 +1,16 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using WebApplicationtemplate.Areas.Identity.Data;
+using Eshop.Areas.Identity.Data;
 //using Newtonsoft.Json;
 using System.Text.Json;
 
-using WebApplicationtemplate.Controllers;
-using WebApplicationtemplate.Context;
-using WebApplicationtemplate.Services;
-using WebApplicationtemplate.Models;
+using Eshop.Controllers;
+using Eshop.Context;
+using Eshop.Services;
+using Eshop.Models;
 
-namespace WebApplicationtemplate
+namespace Eshop
 {
     public class Program
     {

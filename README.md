@@ -1,2 +1,1 @@
-# Eshop
-making a second readme file  in the folder
+an eshop website authenticated and authorized

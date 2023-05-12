@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using WebApplicationtemplate.Data;
-using WebApplicationtemplate.Models;
+using Eshop.Data;
+using Eshop.Models;
 
-namespace WebApplicationtemplate.Context
+namespace Eshop.Context
 {
     public class UserProductContext: DbContext
     {    public UserProductContext()

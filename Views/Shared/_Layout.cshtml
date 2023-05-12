@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using Eshop.Areas.Identity.Data
+@inject SignInManager<WebApplicationtemplateUser> SignInManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -27,7 +31,7 @@
     
 <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" /><link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WebApplicationtemplate.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Eshop.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
@@ -49,15 +53,18 @@
                        <li class="nav-item">
                            
                             <partial name="~/Views/Shared/_LoginPartial.cshtml" />
-                          
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" id="product" asp-controller="Product" asp-action="UserProductView">Product Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" id="product" asp-controller="Product" asp-action="ProductsView">Products</a>
-                        </li>
-                       
+@if (SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" id="product" asp-controller="Product" asp-action="UserProductView">Product Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" id="product" asp-controller="Product" asp-action="ProductsView">Products</a>
+                            </li>
+
+                        }                       
+
                     </ul>
                 </div>
             </div>

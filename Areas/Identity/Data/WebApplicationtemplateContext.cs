@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using WebApplicationtemplate.Areas.Identity.Data;
+using Eshop.Areas.Identity.Data;
 
-namespace WebApplicationtemplate.Data;
+namespace Eshop.Data;
 
 public class WebApplicationtemplateContext : IdentityDbContext<WebApplicationtemplateUser>
 {

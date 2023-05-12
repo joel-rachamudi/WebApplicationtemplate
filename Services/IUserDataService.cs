@@ -1,8 +1,9 @@
-﻿using WebApplicationtemplate.Models;
+﻿using Eshop.Models;
 
-namespace WebApplicationtemplate.Services
+namespace Eshop.Services
 {
     public interface IUserDataService{
         void Postdata(UserProduct product);
+        
     }
 }

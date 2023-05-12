@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
-using WebApplicationtemplate.Context;
-using WebApplicationtemplate.Models;
-using WebApplicationtemplate.Services;
+using Microsoft.AspNetCore.Authorization;
+//using Microsoft.EntityFrameworkCore;
+//using Newtonsoft.Json;
+using Eshop.Context;
+using Eshop.Models;
+using Eshop.Services;
+//using Microsoft.AspNetCore.Http;
 
-namespace WebApplicationtemplate.Controllers
+namespace Eshop.Controllers
 {
     public class ProductController : Controller
     {
@@ -23,23 +25,27 @@ namespace WebApplicationtemplate.Controllers
 
         }
 
-        
+        [Authorize]
         public IActionResult UserProductView(UserProduct product)
-
-               {
-            _userDataService.Postdata(product);
-            return View();
-            
-            //Console.WriteLine("<<<<<<<<<<<<<<<<<<<<<<<<<Database updated>>>>>>>>>>>>>>>>>>>>>>>>>");
-        }
-        public IActionResult ProductsView(UserProduct product)
 
         {
             
+            _userDataService.Postdata(product);
             return View();
-
-            //Console.WriteLine("<<<<<<<<<<<<<<<<<<<<<<<<<Database updated>>>>>>>>>>>>>>>>>>>>>>>>>");
+            
+            
         }
+        [Authorize]
+        public IActionResult ProductsView(UserProduct product)
+
+        { 
+            var data = _userProductContext.UserProducts.ToList();  
+
+            return View(data);
+        }
+
+           
+      
 
 
         /* 

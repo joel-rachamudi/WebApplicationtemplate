@@ -1,16 +1,16 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using WebApplicationtemplate.Areas.Identity.Data;
+using Eshop.Areas.Identity.Data;
 //using Newtonsoft.Json;
 using System.Text.Json;
 
-using WebApplicationtemplate.Controllers;
-using WebApplicationtemplate.Context;
-using WebApplicationtemplate.Services;
-using WebApplicationtemplate.Models;
+using Eshop.Controllers;
+using Eshop.Context;
+using Eshop.Services;
+using Eshop.Models;
 
-namespace WebApplicationtemplate
+namespace Eshop
 {
     public class Program
     {
@@ -20,7 +20,7 @@ namespace WebApplicationtemplate
             Console.WriteLine(products);*/
             var builder = WebApplication.CreateBuilder(args);
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'WebApplicationtemplateContextConnection' not found.");
-            builder.Services.AddTransient<IUserDataService, UserDataService>();
+            builder.Services.AddScoped<IUserDataService, UserDataService>();
             builder.Services.AddDbContext<Data.WebApplicationtemplateContext>(options => options.UseSqlServer(connectionString));
             builder.Services.AddDbContext<UserProductContext>();
             builder.Services.AddDefaultIdentity<WebApplicationtemplateUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<Data.WebApplicationtemplateContext>();

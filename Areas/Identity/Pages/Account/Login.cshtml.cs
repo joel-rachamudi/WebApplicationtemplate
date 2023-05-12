@@ -14,9 +14,9 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using WebApplicationtemplate.Areas.Identity.Data;
+using Eshop.Areas.Identity.Data;
 
-namespace WebApplicationtemplate.Areas.Identity.Pages.Account
+namespace Eshop.Areas.Identity.Pages.Account
 {
     public class LoginModel : PageModel
     {

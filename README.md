@@ -1,2 +1,1 @@
-# WebApplicationtemplate
-this is an ecommersewebsite developed at databeat
+an eshop website authenticated and authorized

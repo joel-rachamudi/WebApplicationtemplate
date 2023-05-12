@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using WebApplicationtemplate.Models;
+using Eshop.Models;
 using Newtonsoft.Json;
 
 
 
-namespace WebApplicationtemplate.Controllers
+namespace Eshop.Controllers
 {
     public class HomeController : Controller
     {

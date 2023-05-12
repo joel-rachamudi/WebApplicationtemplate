@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-namespace WebApplicationtemplate.Models
+namespace Eshop.Models
 
 {
     class Product

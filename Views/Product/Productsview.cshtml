@@ -1,86 +1,76 @@
-﻿@model IEnumerable<Product>
+﻿@using Eshop.Context
+@inject  UserProductContext context
+@model IEnumerable<UserProduct>
 
-   
+ 
 
     <h1>Products</h1>
+<p id="Cart"></p>
+<div> <button onclick="cartdisplay()" class="btn btn-primary">ADD ITEMS</button></div>
 
-<div> <a href="#" class="btn btn-primary">ADD</a></div>
- @if(Model!=null)
-{
-    @foreach (var p in Model)
+<script>
+    var count=0
+    let  Cart = "Cart";
+    function cartupdate()
     {
-        <div class="col-md-auto">
+        count=count+1;
+    }
+    function cartdelete()
+    {
+        count=count-1;
+    }
+    function cartdisplay()
+    {
+        document.getElementById("Cart").innerHTML=Cart+" :"+ count;
+
+    }
+ </script>
+ 
+
+<div class="row">
+@foreach(var item in Model)
+{     
+    
+        <div class="col-4">
             <div class="card">
                 <div class="card-header">
-                    @p.ProductName
+                    PRODUCT
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">@p.ProductName</h5>
-                    <img src=@p.PictureURL class="img-thumbnail">
+                    <h5 class="card-title">PRODUCT DETAILS</h5>
+                   
                     <p class="card-text">
-                        <ol class="property">
+                        <ul class="property">
                             <li>
-                                Alternatenames:@p.Alternatenames
-                            </li>
-                            <li>
-                                Brand:@p.Brand
-                            </li>
-                            Model:@p.Model
-                            <li>
-                                Launched:@p.Launched
-                            </li>
-                            ConsoleFamily:@p.ConsoleFamily
-                            <li>
-                                ConsoleType:@p.ConsoleType
-                            </li>
-                            Inputmethod:@p.Inputmethod
-                            <li>
-                                HardDisk:@p.HardDisk
-                            </li>
-                            RAM:@p.RAM
-                            <li>
-                                Processor:@p.Processor
-
-                            </li>
-                            <li>
-                                Graphics:@p.Graphics
-                            </li>
-                            <li>
-                                Ethernet:@p.Ethernet
-                            </li>
-                            <li>
-                                Weight:@p. Weight
-                            </li>
-                            <li>
-                                HDMI:@p.HDMI
-                            </li>
-                            <li>
-                                USB:@p. USB
-                            </li>
-                            <li>
-                                AVDigitalOutput:@p.AVDigitalOutput
-                            </li>
-                            <li>
-                                WiFi:@p.WiFi
+                                property1:@item.property1
                             </li>
 
-                        </ol>
+                            <li>
+                                property2:@item.property2
+                            </li>
+                            <li>
+                            property3:@item.property3
+                            </li>
+                            <li>
+                                property4:@item.property4
+                            </li>
+                           
+                        </ul>
                     </p>
+                    <button onclick="cartupdate()" class="btn btn-primary">update</button>
+                    <button onclick="cartdelete()" class="btn btn-primary ">delete</button>
 
-
-                    <a href="#" class="btn btn-primary">update</a>
-                    <a href="#" class="btn btn-primary">delete</a>
+             
                 </div>
             </div>
-        </div>
+        </div> 
+
+
 
     }
+</div>
 
-}
-else
-    {
-<p>facing an issue from server joel is trying to fix it!!</p>
-    }
+
 
 
     

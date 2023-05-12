@@ -28,22 +28,24 @@ namespace Eshop.Controllers
         [Authorize]
         public IActionResult UserProductView(UserProduct product)
 
-               {
-            //ViewBag.statuscode=HttpContext.HttpResponse.StatusDescription;
+        {
+            
             _userDataService.Postdata(product);
             return View();
             
-            //Console.WriteLine("<<<<<<<<<<<<<<<<<<<<<<<<<Database updated>>>>>>>>>>>>>>>>>>>>>>>>>");
+            
         }
         [Authorize]
         public IActionResult ProductsView(UserProduct product)
 
-        {
-            
-            return View();
+        { 
+            var data = _userProductContext.UserProducts.ToList();  
 
-            //Console.WriteLine("<<<<<<<<<<<<<<<<<<<<<<<<<Database updated>>>>>>>>>>>>>>>>>>>>>>>>>");
+            return View(data);
         }
+
+           
+      
 
 
         /* 

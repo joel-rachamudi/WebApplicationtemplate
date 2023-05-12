@@ -1,5 +1,6 @@
 ﻿using Eshop.Models;
 using Eshop.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace Eshop.Services
 {
@@ -21,7 +22,18 @@ namespace Eshop.Services
                 context.Add(r);
                 context.SaveChanges();
             }
-    }
+        }
+        public IEnumerable<UserProduct> Getdata(UserProduct model) 
+        {
+            var context = new UserProductContext();
+            
+               
+
+           IEnumerable<UserProduct> entities=context.UserProducts.ToListAsync().GetAwaiter().GetResult();
+                
+            
+            return entities;
+        }
 
         
 
